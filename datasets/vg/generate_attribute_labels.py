@@ -17,8 +17,11 @@ import numpy as np
 
 # In[2]:
 
+import os
 
-get_ipython().system('ls')
+file_list = os.listdir('.')
+print(file_list)
+
 
 
 # In[3]:
