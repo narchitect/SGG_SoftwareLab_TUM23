@@ -155,7 +155,7 @@ _C.MODEL.RPN.FG_IOU_THRESHOLD = 0.7
 # ==> negative RPN example)
 _C.MODEL.RPN.BG_IOU_THRESHOLD = 0.3
 # Total number of RPN examples per image
-_C.MODEL.RPN.BATCH_SIZE_PER_IMAGE = 256
+_C.MODEL.RPN.BATCH_SIZE_PER_IMAGE = 128 
 # Target fraction of foreground (positive) examples per RPN minibatch
 _C.MODEL.RPN.POSITIVE_FRACTION = 0.5
 # Number of top scoring RPN proposals to keep before applying NMS
@@ -199,7 +199,7 @@ _C.MODEL.ROI_HEADS.BBOX_REG_WEIGHTS = (10., 10., 5., 5.)
 # Total number of RoIs per training minibatch =
 #   TRAIN.BATCH_SIZE_PER_IM * TRAIN.IMS_PER_BATCH
 # E.g., a common configuration is: 512 * 2 * 8 = 8192
-_C.MODEL.ROI_HEADS.BATCH_SIZE_PER_IMAGE = 256
+_C.MODEL.ROI_HEADS.BATCH_SIZE_PER_IMAGE = 128
 # Target fraction of RoI minibatch that is labeled foreground (i.e. class > 0)
 _C.MODEL.ROI_HEADS.POSITIVE_FRACTION = 0.25
 
@@ -289,7 +289,7 @@ _C.MODEL.ROI_RELATION_HEAD.PREDICTOR = "MotifPredictor"
 _C.MODEL.ROI_RELATION_HEAD.FEATURE_EXTRACTOR = "RelationFeatureExtractor"
 _C.MODEL.ROI_RELATION_HEAD.POOLING_ALL_LEVELS = True
 _C.MODEL.ROI_RELATION_HEAD.NUM_CLASSES = 51
-_C.MODEL.ROI_RELATION_HEAD.BATCH_SIZE_PER_IMAGE = 64
+_C.MODEL.ROI_RELATION_HEAD.BATCH_SIZE_PER_IMAGE = 32
 _C.MODEL.ROI_RELATION_HEAD.POSITIVE_FRACTION = 0.25
 _C.MODEL.ROI_RELATION_HEAD.USE_GT_BOX = True
 _C.MODEL.ROI_RELATION_HEAD.USE_GT_OBJECT_LABEL = False
@@ -424,8 +424,7 @@ _C.MODEL.RETINANET.BG_IOU_THRESHOLD = 0.4
 # Focal loss parameter: alpha
 _C.MODEL.RETINANET.LOSS_ALPHA = 0.25
 
-# Focal loss parameter: gamma
-_C.MODEL.RETINANET.LOSS_GAMMA = 2.0
+# Focal loss parameter: gammanecessary variables: Identify the variables or tensors in your code that consume a significant amount of GPU memory and are no longer needed for subsequent computations.
 
 # Prior prob for the positives at the beginning of training. This is used to set
 # the bias init for the logits layer
@@ -527,7 +526,7 @@ _C.SOLVER.UPDATE_SCHEDULE_DURING_LOAD = False
 # Number of images per batch
 # This is global, so if we have 8 GPUs and IMS_PER_BATCH = 16, each GPU will
 # see 2 images per batch
-_C.SOLVER.IMS_PER_BATCH = 16
+_C.SOLVER.IMS_PER_BATCH = 2
 
 # ---------------------------------------------------------------------------- #
 # Specific test options
@@ -538,7 +537,7 @@ _C.TEST.EXPECTED_RESULTS_SIGMA_TOL = 4
 # Number of images per batch
 # This is global, so if we have 8 GPUs and IMS_PER_BATCH = 16, each GPU will
 # see 2 images per batch
-_C.TEST.IMS_PER_BATCH = 8
+_C.TEST.IMS_PER_BATCH = 2
 # Number of detections per image
 _C.TEST.DETECTIONS_PER_IMG = 100
 
