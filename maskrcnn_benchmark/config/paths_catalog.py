@@ -119,6 +119,12 @@ class DatasetCatalog(object):
             "image_file": "vg/image_data.json",
             "capgraphs_file": "vg/vg_capgraphs_anno.json",
         },
+        "VG_testing": {
+            "img_dir": "vg/VG_testing/images",
+            "object_file": "vg/IMG_0001_Object.json",
+            "dict_file": "vg/IMG_0001_Att.json",
+            "image_file": "vg/Imagefile_IMG_0001.json",
+        }
     }
 
     @staticmethod
